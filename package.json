@@ -1,0 +1,41 @@
+{
+  "name": "rest-api-dockerize",
+  "version": "1.0.0",
+  "description": "[link to source](https://medium.com/@victorsteven/restful-api-with-nodejs-express-postgresql-sequelize-travis-mocha-coveralls-and-code-climate-f28715f7a014)",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node ./api/index.js",
+    "dev": "nodemon --exec babel-node ./api/index.js",
+    "test": "SET NODE_ENV=test && sequelize db:migrate:undo:all && sequelize db:migrate && nyc --require babel-register  mocha ./api/test/test.js --timeout 20000 --exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.19.3",
+    "sequelize-paginate": "^1.1.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-node": "0.0.1-security",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.1",
+    "nyc": "^14.1.1"
+  }
+}
